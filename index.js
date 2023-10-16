@@ -82,6 +82,13 @@ class Numbers{
   }
   howMany(target){
     //return the count of a given number
+    let accum = 0;
+    for (let index in this.data) {
+      if (this.data[index] == target) {
+        accum++;
+      }
+    }
+    return accum;
   }
 }
 
