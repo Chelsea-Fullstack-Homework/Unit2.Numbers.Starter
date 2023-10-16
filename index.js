@@ -26,6 +26,9 @@ class Numbers{
   }
   printNumbers(){
     //print the numbers in data
+    for (let index in this.data) {
+      console.log(index + ": " + this.data[index]);
+    }
   }
   odds(){
     //return the odd numbers in data
