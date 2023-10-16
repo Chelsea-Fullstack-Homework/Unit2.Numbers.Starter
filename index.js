@@ -60,6 +60,15 @@ class Numbers{
   }
   product(){
     //return the product of the numbers
+    let accum = 0;
+    for (let index in this.data) {
+      if (index != 0) {
+        accum = accum * this.data[index];
+      } else {
+        accum = this.data[index];
+      }
+    }
+    return accum;
   }
   greaterThan(target){
     //return the numbers greater than the target
