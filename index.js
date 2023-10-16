@@ -52,6 +52,11 @@ class Numbers{
   }
   sum(){
     //return the sum of the numbers
+    let  accum = 0;
+    for (let index in this.data) {
+      accum += this.data[index];
+    }
+    return accum;
   }
   product(){
     //return the product of the numbers
