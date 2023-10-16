@@ -32,6 +32,13 @@ class Numbers{
   }
   odds(){
     //return the odd numbers in data
+    const odds = [];
+    for (let index in this.data) {
+      if (this.data[index] % 2 !== 0) {
+        odds.push(this.data[index]);
+      }
+    }
+    return odds;
   }
   evens(){
     //return the even numbers in data
