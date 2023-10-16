@@ -1,8 +1,5 @@
 //Prompt the user for a list of integers separated by commas
-const str = '1,2,3,3,5,9';
-// window.prompt('enter some numbers, like this', '1,2,3,3,5,9');
-
-
+const str = window.prompt('enter some numbers, like this', '1,2,3,3,5,9');
 
 // Complete the Numbers class below
 // the constructor has already been provided
