@@ -72,6 +72,13 @@ class Numbers{
   }
   greaterThan(target){
     //return the numbers greater than the target
+    let greaterThan = [];
+    for (let index in this.data) {
+      if (this.data[index] > target) {
+        greaterThan.push(this.data[index]);
+      }
+    }
+    return greaterThan;
   }
   howMany(target){
     //return the count of a given number
