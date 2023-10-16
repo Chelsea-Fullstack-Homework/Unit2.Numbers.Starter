@@ -42,6 +42,13 @@ class Numbers{
   }
   evens(){
     //return the even numbers in data
+    const evens = [];
+    for (let index in this.data) {
+      if (this.data[index] % 2 === 0) {
+        evens.push(this.data[index]);
+      }
+    }
+    return evens;
   }
   sum(){
     //return the sum of the numbers
