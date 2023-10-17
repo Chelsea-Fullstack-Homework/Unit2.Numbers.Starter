@@ -1,5 +1,6 @@
 //Prompt the user for a list of integers separated by commas
-const str = window.prompt('enter some numbers, like this', '1,2,3,3,5,9');
+const str = '1,2,3,3,5,9';
+// window.prompt('enter some numbers, like this', '1,2,3,3,5,9');
 
 // Complete the Numbers class below
 // the constructor has already been provided
@@ -15,77 +16,50 @@ class Numbers{
   }
   count(){
     //return the count of numbers in data
-    let accum = 0;
-    for (let index in this.data) {
-      accum++;
-    }
-    return accum;
+    return this.data.length;
   }
   printNumbers(){
     //print the numbers in data
-    for (let index in this.data) {
-      console.log(index + ": " + this.data[index]);
-    }
+    this.data.forEach(
+      (data, index)=>{
+        console.log(index + ": " + data);
+      }
+    );
   }
   odds(){
     //return the odd numbers in data
-    const odds = [];
-    for (let index in this.data) {
-      if (this.data[index] % 2 !== 0) {
-        odds.push(this.data[index]);
-      }
-    }
-    return odds;
+    return this.data.filter((data)=>data % 2 !== 0);
   }
   evens(){
     //return the even numbers in data
-    const evens = [];
-    for (let index in this.data) {
-      if (this.data[index] % 2 === 0) {
-        evens.push(this.data[index]);
-      }
-    }
-    return evens;
+    return this.data.filter((data)=>data % 2 === 0);
   }
   sum(){
     //return the sum of the numbers
-    let  accum = 0;
-    for (let index in this.data) {
-      accum += this.data[index];
-    }
-    return accum;
+    return this.data.reduce((accum, data)=>accum += data,0);
   }
   product(){
     //return the product of the numbers
     let accum = 0;
-    for (let index in this.data) {
-      if (index != 0) {
-        accum = accum * this.data[index];
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i] == 0) {
+        accum = 0;
+        break;
+      } else if (i != 0) {
+        accum = accum * this.data[i];
       } else {
-        accum = this.data[index];
+        accum = this.data[i];
       }
     }
     return accum;
   }
   greaterThan(target){
     //return the numbers greater than the target
-    let greaterThan = [];
-    for (let index in this.data) {
-      if (this.data[index] > target) {
-        greaterThan.push(this.data[index]);
-      }
-    }
-    return greaterThan;
+    return this.data.filter((data)=>data>target);
   }
   howMany(target){
     //return the count of a given number
-    let accum = 0;
-    for (let index in this.data) {
-      if (this.data[index] == target) {
-        accum++;
-      }
-    }
-    return accum;
+    return this.data.filter((data)=>data==target).length;
   }
 }
 
